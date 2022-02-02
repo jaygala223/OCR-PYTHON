@@ -1,0 +1,15 @@
+1) install the pytesseract setup from documentation folder
+
+2) change the environment variable (path - edit - new -paste the link where pytesseract installation took place)
+
+3) run the setup from pytesseract - 0.3.7 folder 
+
+Follow the how to run.txt steps to activate the virtual environment after that
+
+1) change directory to the folder where you extracted the zip file
+
+2) run the below command while in the folder in cmd and after activating the virtual environment
+
+	pip install -r requirements.txt
+
+After installing all the modules in the virtual environment follow the how to run.txt file to run the program
