@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+	 <title>OCR Character Recognition</title>
+
+	 <link
+      href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+	 <style>
+
+		 body,html
+		 {
+			height: 100%;
+		 }
+
+		 body
+		 {
+  			margin: 0;
+		 }
+
+		 html
+		 {
+		  	scroll-behavior: smooth;
+		 }
+
+		 /*----------------------- Home Page (Hero Image) ----------------------*/
+
+		 .hero {
+			 background-image: url('https://i.ibb.co/2K3gSN8/engin-akyurt-o-99rrlw-NVY-unsplash-Copy.jpg');
+
+
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+		.centered {
+		  position: absolute;
+		  background-color: rgba(0, 0, 0, 0.4);
+		  padding: 20px;
+		  top: 50%;
+		  font-family: 'Playfair Display', serif;
+		  left: 50%;
+		  right: -20.5%;
+		  width: auto;
+		  transform: translate(-50%, -50%);
+		}
+
+		.scroll_down {
+		  position: absolute;
+		  background-color: transparent;
+		  padding: 20px;
+		  text-decoration: none;
+		  top: 95%;
+		  font-family: 'Chivo', sans-serif;
+		  left: 50%;
+		  width: auto;
+		  transform: translate(-50%, -50%);
+		}
+
+		@media screen and (max-width: 800px) {
+		  .centered {
+			font-size: 70px !important;
+		  }
+		}
+
+		@media screen and (max-width: 550px) {
+		  .centered {
+			font-size: 30px !important;
+			  border: 5px solid white !important;
+		  }
+
+			.scroll_down img{
+				width: 30px !important;
+			}
+		}
+
+		/*------------------------- Main Page ----------------------------*/
+
+		.main {
+		  margin: 0% 0%;
+		  padding: 6% 0%;
+		  /*background-color: #e1b382;*/
+		  background-color: rgb(225, 179, 130, 0.7);
+		}
+
+		.main p {
+		  font-size: 20px;
+		  margin: auto;
+		  width: 70%;
+		}
+
+
+		 /*------------------------- Footer ----------------------------*/
+
+		.footer {
+		  margin: 0% 0%;
+		  padding: 2% 2%;
+			background-color: #6ebccc;
+		  color: white;
+		}
+
+		.navbar h1 {
+		  border: medium;
+		  display: block;
+		  float: left;
+		  color: white;
+		  text-align: center;
+		  /*font-size: 2.2vw;*/
+		  padding: 0% 2.5%;
+		}
+
+		.flex_container_footer {
+		  display: flex;
+		  width: 100%;
+		  margin: auto;
+		  align-items: center;
+		}
+
+		#sticky-footer {
+		  flex-shrink: none;
+		}
+
+
+		@media screen and (max-width: 1110px) {
+		  .flex_container_footer {
+			flex-direction: column;
+			  width: 100% !important;
+		  }
+			#footer_nav {
+				width: 100% !important;
+				margin: auto !important;
+				padding: 0 !important;
+				float: left !important;
+				margin-right:  20% !important;
+			}
+			#footer_icon{
+				width: 100% !important;
+			}
+		}
+
+		@media screen and (max-width: 600px) {
+		  .flex_container_footer h1{
+			font-size: 20px !important;
+		  }
+			#footer_nav {
+				width: 100% !important;
+				margin: auto !important;
+				padding: 0 !important;
+				float: left !important;
+				margin-right:  20% !important;
+
+			}
+			.flex_container_footer a{
+				font-size: 14px !important;
+			}
+
+			#footer_icon{
+				width: 100% !important;
+			}
+			.flex_container_footer img{
+				width: 18px !important;
+				height: 18px !important;
+
+			}
+			#footer_copyright{
+				font-size: 10px !important;
+			}
+		}
+
+		@media screen and (max-width: 450px) {
+		  .flex_container_footer h1{
+			font-size: 15px !important;
+		  }
+			#footer_nav {
+				width: 100% !important;
+				margin: auto !important;
+				padding: 0 !important;
+				float: left !important;
+				margin-right:  20% !important;
+
+			}
+			.flex_container_footer a{
+				font-size: 13px !important;
+			}
+
+			#footer_icon{
+				width: 100% !important;
+			}
+			.flex_container_footer img{
+				width: 15px !important;
+				height: 15px !important;
+
+			}
+			#footer_copyright{
+				font-size: 8px !important;
+			}
+		}
+
+	 </style>
+
+ </head>
+ <body>
+
+	 <!--------------- Home Page (Hero Image) ------------------------->
+
+    <div class="hero" id="home">
+      <div
+        class="centered"
+        style="
+          font-size: 70px;
+          border: 10px solid white;
+          color: white;
+          font-family: 'Playfair Display', serif !important;
+		  text-align: center;
+        "
+      >
+        OCR Character Recognition
+      </div>
+      <!--<div class="scroll_down"><a href="#about" style="font-family: 'Chivo', sans-serif; color: white; font-size: 20px; text-decoration: none;"><strong>SCROLL DOWN</strong></a></div>-->
+      <div class="scroll_down">
+        <a
+          href="#main"
+          style="
+            font-family: 'Chivo', sans-serif;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+          "
+        >
+          <img src="https://i.ibb.co/807Y72W/scroll-down.png" alt="SCROLL DOWN" />
+        </a>
+      </div>
+    </div>
+
+	 <!--------------- Main Page ------------------------->
+
+    <div class="main" id="main">
+
+		<h1 align="center" style="font-family: 'Chivo', sans-serif;">Upload new File</h1>
+
+		{% if msg %}
+		<h1 align="center" style="font-family: 'Chivo', sans-serif;">{{ msg }}</h1>
+		{% endif %}
+
+		<form method="post" enctype="multipart/form-data" align="center" size="1000">
+			<p>
+				<input type="file" name="file" style="height: 50px; font-size: 15px;">
+				<a href="/"><input type="submit" value="Upload" style="width: 100px; height: 30px; font-size: 15px"></a>
+				<a href="/reset"><input type="button" value="Reset" style="width: 100px; height: 30px; font-size: 15px"></a>
+			</p>
+		</form>
+		<h1 align="center" style="font-family: 'Chivo', sans-serif;">Result:</h1>
+		   {% if img_src %}
+			 <img src="{{ img_src }}" alt="Image not found" align="center" style="display: block;
+  margin-left: auto;
+  margin-right: auto; width: 60%">
+		   {% endif %}
+
+			<br>
+		   {% if extracted_text %}
+			 <p align="center"> The extracted text from the image above is: <br><p align="justify"><b> {{ extracted_text }} </b></p></p>
+
+		   {% else %}
+			 <p align="center">The extracted text will be displayed here</p>
+		   {% endif %}
+			<br>
+			<p align="center" size="1000">
+				<a href="/return-files" target="blank"><button class="btn btn-default" style="width: 100px; height: 30px; font-size: 15px">Download</button></a>
+			</p>
+    </div>
+
+
+	 <!--------------- Footer ------------------------->
+
+    <div class="footer">
+      <div class="flex_container_footer">
+        <div style="widows: 10%;">
+          <h1 style="font-family: 'Playfair Display';">OCR Character Recognition</h1>
+        </div>
+        <div style="padding: 0% 0% 0% 10%; text-align: justify; width: 55%;" id="footer_nav" >
+			<p align="right"><b>Anmaya Agarwal (N002)</b></p>
+			<p align="right"><b>Yash Katariya (N024)</b></p>
+			<p align="right"><b>Saketh Mantha (N028)</b></p>
+			<p align="right"><b>Keval Savla (N044)</b></p>
+			<p align="right"><b>Jay Gala (N066)</b></p>
+        </div>
+	  </div>
+	  <footer id="sticky-footer">
+		<div class="container text-center" style="text-align: center;" id="footer_copyright">
+		  <b>Copyright &copy; MPSTME PL PORJECT </b>
+		</div>
+	  </footer>
+
+    </div>
+
+
+
+ </body>
+</html>
